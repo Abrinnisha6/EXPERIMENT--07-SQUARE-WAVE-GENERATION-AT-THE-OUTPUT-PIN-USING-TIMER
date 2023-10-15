@@ -132,10 +132,15 @@ MX_TIM2_Init();
 ### CALCULATION :
 
 TON = 2.5
+
 TOFF = 1
+
 TOTAL TIME = 1.75
+
 DUTY = (TON/TOTAL TIME)*100
+
      = (1.25/1.75)*100
+     
 DUTY = 71%
 
 ### FOR PULSE AT 2600 :
@@ -148,10 +153,15 @@ DUTY = 71%
 ### CALCULATION :
 
 TON = 1.2
+
 TOFF = 2.2
+
 TOTAL TIME = 1.7
+
 DUTY = (TON/TOTAL TIME)*100
+
      = (0.6/1.7)*100
+     
 DUTY = 35%
 
 #### FOR PULSE AT 6000 :
@@ -164,10 +174,15 @@ DUTY = 35%
 ### CALCULATION :
 
 TON =  3
+
 TOFF = 0.6 
+
 TOTAL TIME = 1.8
+
 DUTY = (TON/TOTAL TIME)*100
+
      = (1.5/1.8)*100
+     
 DUTY = 83%
           
 ## Result :
