@@ -1,12 +1,14 @@
 # EXPERIMENT--07-SQUARE-WAVE-GENERATION-AT-THE-OUTPUT-PIN-USING-TIMER
 
-### Aim:
+## Aim :
+
 To generate a PWM wave at the timer pin output and  simuate it on  proteus using an virtual oscilloscope  
 
-### Components required:
+## Components required :
+
 STM32 CUBE IDE, Proteus 8 simulator .
 
-### Theory:
+## Theory :
 
 The timer modules can operate a variety of modes one of which is the PWM mode. Where the timer gets clocked from an internal source and counts up to the auto-reload register value, then the output channel pin is driven HIGH. And it remains until the timer counts reach the CCRx register value, the match event causes the output channel pin to be driven LOW. And it remains until the timer counts up to the auto-reload register value, and so on.
 
@@ -44,7 +46,8 @@ In normal settings, assuming you’re using the timer module in PWM mode and gen
 
 
 
-## Procedure:
+## Procedure :
+
 Step1: Open CubeMX & Create New Project
  ![image](https://user-images.githubusercontent.com/36288975/226189166-ac10578c-c059-40e7-8b80-9f84f64bf088.png)
 
@@ -91,48 +94,85 @@ Step14. click on debug and simulate using simulation as shown below
  ![image](https://github.com/vasanthkumarch/EXPERIMENT--07-SQUARE-WAVE-GENERATION-AT-THE-OUTPUT-PIN-USING-TIMER/assets/36288975/b8efbfc2-f0c5-4106-8117-3a6e7ac87f6c)
 
 
- 
-
-  
-
 ## STM 32 CUBE PROGRAM :
 
+### DEVELOPED BY : ABRIN NISHA A
+
+### REG NO : 212222230005
+
+```
+MX_GPIO_Init();
+MX_TIM2_Init();
+{
+    HAL_TIM_Base_Start(&htim2);
+    HAL_TIM_PWM_Init(&htim2);
+    HAL_TIM_PWM_Start(&htim2,TIM_CHANNEL_1);
+}
+```
+
+## Output screen shots of proteus :
+
+![71](https://github.com/Abrinnisha6/EXPERIMENT--07-SQUARE-WAVE-GENERATION-AT-THE-OUTPUT-PIN-USING-TIMER/assets/118889454/9326961e-f7b2-4e91-b9b0-40eb8fc8c71b)
 
 
+ ## CIRCUIT DIAGRAM (EXPORT THE GRAPHICS TO PDF AND ADD THE SCREEN SHOT HERE) :
 
+ ![72](https://github.com/Abrinnisha6/EXPERIMENT--07-SQUARE-WAVE-GENERATION-AT-THE-OUTPUT-PIN-USING-TIMER/assets/118889454/b3a599c8-20be-4e71-b748-1dd0e2b28c88)
 
-## Output screen shots of proteus  :
  
- 
- ## CIRCUIT DIAGRAM (EXPORT THE GRAPHICS TO PDF AND ADD THE SCREEN SHOT HERE): 
- 
+## DUTY CYCLE AND FREQUENCY CALCULATION :
 
-## DUTY CYCLE AND FREQUENCY CALCULATION 
-FOR PULSE AT 500
+### COUNTER PERIOD : 7200
 
-TON = 
-TOFF=
-TOTAL TIME = 
-FREQUENCY = 1/(TOTAL TIME)
+### FOR PULSE AT 4000 :
 
-FOR PULSE AT 700
+![O1](https://github.com/Abrinnisha6/EXPERIMENT--07-SQUARE-WAVE-GENERATION-AT-THE-OUTPUT-PIN-USING-TIMER/assets/118889454/e5c037ad-3fa2-4c4d-8e0c-b6c355f01980)
+![O2](https://github.com/Abrinnisha6/EXPERIMENT--07-SQUARE-WAVE-GENERATION-AT-THE-OUTPUT-PIN-USING-TIMER/assets/118889454/e6f5cefe-4835-4d81-8f2e-234091ba0e34)
 
-TON = 
-TOFF=
-TOTAL TIME = 
-FREQUENCY = 1/(TOTAL TIME)
+### CALCULATION :
 
+TON = 2.5
+TOFF = 1
+TOTAL TIME = 1.75
+DUTY = (TON/TOTAL TIME)*100
+     = (1.25/1.75)*100
+DUTY = 71%
 
-FOR PULSE AT 900
+### FOR PULSE AT 2600 :
 
-TON = 
-TOFF=
-TOTAL TIME = 
-FREQUENCY = 1/(TOTAL TIME)
+![O3](https://github.com/Abrinnisha6/EXPERIMENT--07-SQUARE-WAVE-GENERATION-AT-THE-OUTPUT-PIN-USING-TIMER/assets/118889454/7e743a41-340f-4582-b35b-663d4fb20d6a)
+
+![O4](https://github.com/Abrinnisha6/EXPERIMENT--07-SQUARE-WAVE-GENERATION-AT-THE-OUTPUT-PIN-USING-TIMER/assets/118889454/e7ec3f28-402d-400c-a8c5-4e1929536ec8)
 
 
+### CALCULATION :
+
+TON = 1.2
+TOFF = 2.2
+TOTAL TIME = 1.7
+DUTY = (TON/TOTAL TIME)*100
+     = (0.6/1.7)*100
+DUTY = 35%
+
+#### FOR PULSE AT 6000 :
+
+![O5](https://github.com/Abrinnisha6/EXPERIMENT--07-SQUARE-WAVE-GENERATION-AT-THE-OUTPUT-PIN-USING-TIMER/assets/118889454/7dbd809f-acc8-4c59-a90e-9abd373fbc44)
+
+
+![O6](https://github.com/Abrinnisha6/EXPERIMENT--07-SQUARE-WAVE-GENERATION-AT-THE-OUTPUT-PIN-USING-TIMER/assets/118889454/381d6458-e461-41b2-952f-5aa2df2398ac)
+
+### CALCULATION :
+
+TON =  3
+TOFF = 0.6 
+TOTAL TIME = 1.8
+DUTY = (TON/TOTAL TIME)*100
+     = (1.5/1.8)*100
+DUTY = 83%
+          
 ## Result :
-A PWM Signal is generated using the following frequency and various duty cycles are simulated 
+
+A PWM Signal is generated using the following frequency and various duty cycles are simulated.
 
 
 
